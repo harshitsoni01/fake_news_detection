@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fake News Detector</title>
+    <link
+      href="{{ url_for('static', filename='css/resultspagestyle.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <h1 class="title">{{pred}}</h1>
+    <div class="courses-container">
+      <div class="course">
+        <div class="course-info">
+          <h2><b>Text: </b> {{translated_query['original_text']}}</h2>
+          <h2><b>Language: </b>{{translated_query['source_lang']}}</h2>
+          {% if translated_query['source_lang'] != 'en' %}
+          <h2><b>Translated Text: </b>{{translated_query['final_text']}}</h2>
+          {% endif %}
+          <h2><b>Cleaned Text: </b>{{cleaned_query}}</h2>
+          <h3>Did this help? </h3>
+          <label class="rocker rocker-small">
+            <input type="checkbox">
+            <span class="switch-left">Yes</span>
+            <span class="switch-right">No</span>
+          </label>
+          <button class="btn"><a href="/">DETECT ANOTHER ARTICLE</a></button>
+        </div>
+      </div>
+    </div>
+    {% if real_news['totalResults'] != 0 %}
+    <div class="courses-container">
+      <div class="course">
+        <div class="course-info real-news">
+          <h1><b>Similar Real News</b></h1>
+          <h2><b>Title: </b>{{real_news["title"]}}</h2>
+          <h2><b>Text: </b>{{real_news["text"]}}</h2>
+          <h2><b>Source: </b>{{real_news["source"]}}</h2>
+          <h2>.</h2>
+          <button class="btn"><a href="{{real_news["link"]}}">READ FULL ARTICLE</a></button>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <script></script>
+  </body>
+</html>

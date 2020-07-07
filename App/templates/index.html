@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>TechnologIQ</title>
+    <link rel="icon" type="image/x-icon" href="static/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link
+      href="{{ url_for('static', filename='css/styles.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#masthead">
+          TechnologIQ</a
+        >
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Detect</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#projects"
+                >About Us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-white mb-4">HeadlineCop</h2>
+            <h3 class="text-white mb-4">Fake News Detector</h3>
+            <p class="text-white-50">
+              Post your news content here:
+            </p>
+            <form
+              id="form_pred"
+              class="contact100-form validate-form"
+              method="post"
+              action="/api"
+            >
+              <div>
+                <textarea
+                  class="form-control"
+                  rows="10"
+                  id="comment"
+                  type="text"
+                  placeholder="Enter News"
+                  name="news"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="mt-5 col-md-15">
+                <button
+                  type="submit"
+                  onclick="Detect(resp)"
+                  class="btn btn-light btn-detect"
+                >
+                  Detect
+                </button>
+              </div>
+            </form>
+            <script>
+              function Detect(resp) {
+                if (resp.toUpperCase() == "REAL") {
+                } else {
+                }
+                alert("The news is " + result);
+              }
+            </script>
+          </div>
+        </div>
+        <img class="illustration_img" src="static/img/sharing_news_trans.svg" />
+
+        <!-- <img class="img-fluid" src="static/img/content.jpg" alt="" /> -->
+      </div>
+    </section>
+
+    <!-- Masthead-->
+    <header class="masthead" id="masthead">
+      <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+          <h1 class="mx-auto my-0 text-uppercase">Fake News Detector</h1>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">
+            Fake news is misinformation or manipulated news that is spread
+            across social media with an intention to damage a person, agency and
+            organization. Due to the dissemination of fake news, there is need
+            for computational methods to detect them. Fake news detection aims
+            to help users to expose varieties of fabricated news.
+          </h2>
+          <a class="btn btn-primary js-scroll-trigger" href="#about"
+            >Get Started</a
+          >
+        </div>
+      </div>
+    </header>
+    <!-- Projects-->
+    <section class="projects-section bg-light" id="projects">
+      <div class="container">
+        <!-- Featured Project Row-->
+        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+          <div class="col-xl-8 col-lg-7">
+            <img
+              class="img-fluid mb-5 mb-lg-0"
+              src="static/img/logo.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="col-xl-4 col-lg-5">
+            <div class="featured-text text-center text-lg-left">
+              <h4>TechnologIQ</h4>
+              <p class="text-black-50 mb-0">
+                The ML model of TechnologIQ has been trained to detect the
+                genuinity of any news, in any language for you.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Project One Row-->
+        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+          <div class="col-lg-6">
+            <img class="img-fluid" src="static/img/glitch.jpg" alt="" />
+          </div>
+          <div class="col-lg-6">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div
+                  class="project-text w-100 my-auto text-center text-lg-left"
+                >
+                  <h4 class="text-white">Real or Fake?</h4>
+                  <p class="mb-0 text-white-50">
+                    Circulation of fake news on digital platforms has been a
+                    pain point, and the government has warned social media
+                    companies that any abuse of the platforms to influence the
+                    electorate will not be tolerated. Over 53 per cent of the
+                    respondents claimed to have received fake news over various
+                    social media platforms. Interestingly, about 41 per cent of
+                    the respondents said they made efforts to authenticate a
+                    news by searching it on Google, Facebook, and Twitter.
+                  </p>
+                  <hr class="d-none d-lg-block mb-0 ml-0" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Project Two Row-->
+        <div class="row justify-content-center no-gutters">
+          <div class="col-lg-6">
+            <img class="img-fluid" src="static/img/computer.jpg" alt="" />
+          </div>
+          <div class="col-lg-6 order-lg-first">
+            <div class="bg-black text-center h-100 project">
+              <div class="d-flex h-100">
+                <div
+                  class="project-text w-100 my-auto text-center text-lg-right"
+                >
+                  <h4 class="text-white">Why what we do is imporatnt?</h4>
+                  <p class="mb-0 text-white-50">
+                    The genuinity of news is crucial in times where social media
+                    is contantly giving us updates about the events going on in
+                    the entire world. We think emotionally, but machines don't.
+                  </p>
+                  <hr class="d-none d-lg-block mb-0 mr-0" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Signup-->
+    <section class="signup-section" id="signup">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 mx-auto text-center">
+            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+            <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+            <form class="form-inline d-flex">
+              <input
+                class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
+                id="inputEmail"
+                type="email"
+                placeholder="Enter email address..."
+              />
+              <button class="btn btn-primary mx-auto" type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact-->
+    <section class="contact-section bg-black">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Address</h4>
+                <hr class="my-4" />
+                <div class="small text-black-50">
+                  TSEC, Bandra West, Mumbai- 50
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-envelope text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Email</h4>
+                <hr class="my-4" />
+                <div class="small text-black-50">
+                  <a href="#!">headlinecop@technologiq.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3 mb-md-0">
+            <div class="card py-4 h-100">
+              <div class="card-body text-center">
+                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                <h4 class="text-uppercase m-0">Phone</h4>
+                <hr class="my-4" />
+                <div class="small text-black-50">+91 (555) 902-8832</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="social d-flex justify-content-center">
+          <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+          <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+          <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+      <div class="container">Copyright © TechnologIQ 2020</div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
