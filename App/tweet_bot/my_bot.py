@@ -1,44 +1,19 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[24]:
-
 
 import tweepy
 import time
 import joblib
+import keys
 
 #Twitter Bot
-
-
-# In[26]:
-
-
 print("This is my bot!")
 
-CONSUMER_KEY = 'YSyDCRJID0Cj9wGjjCUvkgTAc'
-CONSUMER_SECRET = 'YH6TOJIGRD81TzOkYXIZzG5wL0NRhHcqAvobL4bc27twfbJPdl'
-ACCESS_KEY = '1252588880596893696-2ockVNpr0iOA563EOyzPNlEvTStxGo'
-ACCESS_SECRET = 'J1ZDodrTNPMkAdkBIPUq2dcFzLs67TwoHnpxXQAsfsZP2'
-
-# CONSUMER_KEY = '4QDbYFkic0GWKucHNFiBlzVHi'
-# CONSUMER_SECRET = 'qH4NxgYgVDAZRwj4uwWm2hhTdNEwBxRjlrLOvpdEi1vkjovAme'
-# ACCESS_KEY = '1252588880596893696-2ockVNpr0iOA563EOyzPNlEvTStxGo'
-# ACCESS_SECRET = 'J1ZDodrTNPMkAdkBIPUq2dcFzLs67TwoHnpxXQAsfsZP2'
-
-
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+auth = tweepy.OAuthHandler(keys.CONSUMER_KEY, keys.CONSUMER_SECRET)
+auth.set_access_token(keys.ACCESS_KEY, keys.ACCESS_SECRET)
 api = tweepy.API(auth)
-
 
 FILE_NAME = 'last_seen_id.txt'
 
 pipeline = joblib.load('../pipeline_final.sav')
-
-
-# In[27]:
-
 
 #this to reply to tweets only once 
 #this is to retrieve the last seen id
@@ -47,10 +22,6 @@ def retrieve_last_seen_id(FILE_NAME):
     last_seen_id = int(f_read.read().strip())
     f_read.close()
     return last_seen_id
-
-
-# In[28]:
-
 
 #this is to store last seen id/rewrite it 
 def store_last_seen_id(last_seen_id, FILE_NAME):
@@ -61,17 +32,10 @@ def store_last_seen_id(last_seen_id, FILE_NAME):
     return
 
 
-# In[29]:
-
-
 #Detect if tweet is real or fake news
 def predict_tweet_news(text):
     pred = pipeline.predict(text)
     return pred
-
-
-# In[32]:
-
 
 
 def reply_to_tweets():
@@ -94,16 +58,7 @@ def reply_to_tweets():
             prediction = predict_tweet_news(tweet_received)
             api.update_status(f'#news @{mention.user.screen_name} This is {prediction}!', mention.id)
 
-
-# In[33]:
 reply_to_tweets()
 # while True:
 #     reply_to_tweets()
 #     time.sleep(2)
-
-
-# In[ ]:
-
-
-
-
