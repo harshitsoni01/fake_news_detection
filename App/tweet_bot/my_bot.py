@@ -2,13 +2,13 @@
 import tweepy
 import time
 import joblib
-import keys
+import key
 
 #Twitter Bot
 print("This is my bot!")
 
-auth = tweepy.OAuthHandler(keys.CONSUMER_KEY, keys.CONSUMER_SECRET)
-auth.set_access_token(keys.ACCESS_KEY, keys.ACCESS_SECRET)
+auth = tweepy.OAuthHandler(key.CONSUMER_KEY, key.CONSUMER_SECRET)
+auth.set_access_token(key.ACCESS_KEY, key.ACCESS_SECRET)
 api = tweepy.API(auth)
 
 FILE_NAME = 'last_seen_id.txt'
