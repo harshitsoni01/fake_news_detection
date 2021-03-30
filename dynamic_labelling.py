@@ -13,7 +13,7 @@ import joblib
 print("Enter name of csv file to label")
 print("NOTE: put file in csv_files directory")
 file_name = input("")
-file_location = f'../csv_files/{file_name}'
+file_location = f'/csv_files/{file_name}'
 df_read = pd.read_csv(file_location)
 
 
@@ -62,8 +62,8 @@ df1
 
 # In[66]:
 
-file_save_location = f'../csv_files/{file_name}_labelled.csv'
-df1.to_csv('../csv_files/example1_labelled.csv')
+file_save_location = f'/csv_files/{file_name}_labelled.csv'
+df1.to_csv('/csv_files/example1_labelled.csv')
 
 
 # In[ ]:
