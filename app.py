@@ -4,7 +4,7 @@ from feature import *
 import json
 from find_real_news import get_real_news  # get real news from NewsAPI
 
-pipeline = joblib.load('/pipeline_final.sav')
+pipeline = joblib.load('./pipeline_final.sav')
 
 app = Flask(__name__)
 
