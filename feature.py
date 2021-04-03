@@ -8,7 +8,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from translator import lang_translate
 
-nltk.data.path.append('C:/fake_news_detection/venv/lib/site-packages/nltk/data.py')
+# nltk.data.path.append('C:/fake_news_detection/venv/lib/site-packages/nltk/data.py')
 # nltk.download()
 
 def get_all_query(title):
