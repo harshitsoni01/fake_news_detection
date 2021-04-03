@@ -21,9 +21,7 @@ def get_delay():
     result = request.form
     query_news = result['news']
     # returns dictionary with language, original text and translated text
-    # translated_query = lang_translate(query_news)
-    # add the above line again 
-    translated_query = query_news
+    translated_query = lang_translate(query_news)
     cleaned_query = remove_punctuation_stopwords_lemma(
         translated_query["final_text"])
     query = get_all_query(translated_query["final_text"])
