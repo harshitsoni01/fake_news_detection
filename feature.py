@@ -8,6 +8,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 from translator import lang_translate
 
+nltk.data.path.append('C:/User/mital/AppData/Roaming/nltk_data')
 # nltk.download()
 
 def get_all_query(title):
