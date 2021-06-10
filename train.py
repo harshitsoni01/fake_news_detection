@@ -12,7 +12,8 @@ import itertools
 import numpy as np
 
 # Import dataset using pandas dataframe
-df = pd.read_csv('datasets/politifact_data.csv')
+# df = pd.read_csv('datasets/real_and_fake.csv')
+df = pd.read_csv('datasets/fake_real_final_dataset.csv')
 
 # Inspect shape of `df`
 df.shape
