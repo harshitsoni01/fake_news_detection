@@ -46,7 +46,7 @@ nbformat==5.0.7
 newsapi-python==0.2.6
 nltk==3.5
 notebook==6.0.3
-numpy==1.19.0
+numpy==1.22.0
 oauthlib==3.1.0
 packaging==20.4
 pandas==1.0.5
