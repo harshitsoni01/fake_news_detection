@@ -41,7 +41,7 @@ lxml==4.5.1
 MarkupSafe==1.1.1
 matplotlib==3.4.2
 mistune==0.8.4
-nbconvert==5.6.1
+nbconvert==6.3.0
 nbformat==5.0.7
 newsapi-python==0.2.6
 nltk==3.5
