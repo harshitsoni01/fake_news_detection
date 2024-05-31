@@ -2578,7 +2578,7 @@ class CCompilerOpt(_Config, _Distutils, _Cache, _CCompiler, _Feature, _Parse):
         cache_hash = self.cache_hash(targets, has_baseline)
         try:
             with open(config_path) as f:
-                last_hash = f.readline().split("cache_hash:")
+                last_hash = f.readline(5_000_000).split("cache_hash:")
                 if len(last_hash) == 2 and int(last_hash[1]) == cache_hash:
                     return True
         except OSError:

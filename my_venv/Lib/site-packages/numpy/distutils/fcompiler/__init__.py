@@ -982,7 +982,7 @@ def is_free_format(file):
     # signs of free format are detected.
     result = 0
     with open(file, encoding='latin1') as f:
-        line = f.readline()
+        line = f.readline(5_000_000)
         n = 10000 # the number of non-comment lines to scan for hints
         if _has_f_header(line) or _has_fix_header(line):
             n = 0
@@ -996,12 +996,12 @@ def is_free_format(file):
                 if (line[0]!='\t' and _free_f90_start(line[:5])) or line[-1:]=='&':
                     result = 1
                     break
-            line = f.readline()
+            line = f.readline(5_000_000)
     return result
 
 def has_f90_header(src):
     with open(src, encoding='latin1') as f:
-        line = f.readline()
+        line = f.readline(5_000_000)
     return _has_f90_header(line) or _has_fix_header(line)
 
 _f77flags_re = re.compile(r'(c|)f77flags\s*\(\s*(?P<fcname>\w+)\s*\)\s*=\s*(?P<fflags>.*)', re.I)
