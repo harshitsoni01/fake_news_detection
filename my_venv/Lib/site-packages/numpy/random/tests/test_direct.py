@@ -164,7 +164,7 @@ class Base:
     @classmethod
     def _read_csv(cls, filename):
         with open(filename) as csv:
-            seed = csv.readline()
+            seed = csv.readline(5_000_000)
             seed = seed.split(',')
             seed = [int(s.strip(), 0) for s in seed[1:]]
             data = []

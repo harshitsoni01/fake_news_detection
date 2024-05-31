@@ -81,7 +81,7 @@ class build_scripts(Command):
             else:
                 encoding, lines = tokenize.detect_encoding(f.readline)
                 f.seek(0)
-                first_line = f.readline()
+                first_line = f.readline(5_000_000)
                 if not first_line:
                     self.warn("%s is an empty file (skipping)" % script)
                     continue

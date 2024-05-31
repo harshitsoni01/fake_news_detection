@@ -727,7 +727,7 @@ _has_cpp_header = re.compile(r'-\*-\s*c\+\+\s*-\*-', re.I).search
 def get_swig_target(source):
     with open(source, 'r') as f:
         result = None
-        line = f.readline()
+        line = f.readline(5_000_000)
         if _has_cpp_header(line):
             result = 'c++'
         if _has_c_header(line):
